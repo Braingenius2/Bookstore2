@@ -1,12 +1,12 @@
 
-# Math-Magicians
+# Bookstore
 <a name="readme-top"></a>
 
 <div align="center">
   <img src="http://img.scoop.it/cKEZkd1vEUhIUuoyVpYuQjl72eJkfbmt4t8yenImKBXEejxNn4ZJNZ2ss5Ku7Cxt" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Math-Magicians</b></h3>
+  <h3><b>Bookstore</b></h3>
 
 </div>
 
@@ -35,9 +35,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# ⭐ Math-Magicians <a name="about-project"></a>
+# 📚 Bookstore App<a name="about-project"></a>
 
-**"Math magicians" is a Single Page App for math. Perform simple calculations and read a random math-related quote to inspire and motivate mathematical thinking. Built with React. Contributions welcome!** 
+**"The Bookstore app" is a Single Page App. Built with React. Contributions welcome!** 
 
 ## 🛠 Built With <a name="built-with"></a>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -57,8 +57,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Key Features <a name="key-features"></a>
 
 - **minimalist UI**
-- **Motivational quotes tailored for maths enthusiasts**
-- **Speedy calculations**
+- **A lot of books**
+- **Categories**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,8 +195,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [] **Scientific calculator**
-- [] **Generative AI math solving capabilities**
+- [] **More Books**
+- [] **Generative AI based reccommendations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
