@@ -1,10 +1,28 @@
-import './App.css';
+import './css/App.css';
+import {
+  BrowserRouter, Routes, Route, Outlet,
+} from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './components/HomePage';
+import CategoriesPage from './components/CategoriesPage';
+
+const Layout = () => (
+  <div className="container">
+    <Navbar />
+    <Outlet />
+  </div>
+);
 
 function App() {
   return (
-    <div>
-      <h1>My Bookstore App</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
