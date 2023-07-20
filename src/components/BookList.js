@@ -1,22 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
-const BookList = ({ books, onDelete }) => (
-  <div>
-    {books.map((book) => (<Book book={book} key={book.id} onDelete={onDelete} />))}
-  </div>
-);
-
-BookList.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  onDelete: PropTypes.func.isRequired,
+const BookList = () => {
+  const { books } = useSelector((state) => state.books);
+  console.log(books[2]);
+  return (
+    <div>
+      {books.map((book) => (<Book book={book} key={book.item_id} />))}
+    </div>
+  );
 };
 
 export default BookList;
