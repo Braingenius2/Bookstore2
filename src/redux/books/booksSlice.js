@@ -17,7 +17,6 @@ const fetchBooks = createAsyncThunk('books/fetchBooks', async (_, { rejectWithVa
   } catch (error) {
     return rejectWithValue('Something went wrong with fetching books', error);
   }
-
 });
 
 const addBook = createAsyncThunk('books/addBook', async (newBook, { rejectWithValue }) => {
@@ -31,7 +30,7 @@ const addBook = createAsyncThunk('books/addBook', async (newBook, { rejectWithVa
 
 const removeBook = createAsyncThunk('books/removeBook', async (itemId, { rejectWithValue }) => {
   try {
-    await axios.delete(`${baseUrl}/apps/${appId}/books/${itemId}`,);
+    await axios.delete(`${baseUrl}/apps/${appId}/books/${itemId}`);
     return itemId;
   } catch (error) {
     return rejectWithValue('Something went wrong with removing book', error);
@@ -73,5 +72,5 @@ const booksSlice = createSlice({
   },
 });
 
-export { fetchBooks, addBook, removeBook};
+export { fetchBooks, addBook, removeBook };
 export default booksSlice.reducer;
