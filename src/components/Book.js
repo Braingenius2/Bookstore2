@@ -15,7 +15,7 @@ const Book = ({ book }) => {
       <p>{book.category}</p>
       <h2>{book.title}</h2>
       <p>{book.author}</p>
-      <button type="button" onClick={handleRemoveBook(book.item_id)}>Delete</button>
+      <button type="button" onClick={() => handleRemoveBook(book.item_id)}>Delete</button>
     </div>
   );
 };
