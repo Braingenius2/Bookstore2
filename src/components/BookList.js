@@ -4,7 +4,6 @@ import Book from './Book';
 
 const BookList = () => {
   const { books } = useSelector((state) => state.books);
-  console.log(books[2]);
   return (
     <div>
       {books.map((book) => (<Book book={book} key={book.item_id} />))}
