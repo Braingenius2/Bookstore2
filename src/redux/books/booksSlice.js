@@ -2,7 +2,26 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  books: [],
+  books: [
+    {
+      item_id: 'item1',
+      title: 'The Great Gatsby',
+      author: 'John Smith',
+      category: 'Fiction',
+    },
+    {
+      item_id: 'item2',
+      title: 'Anna Karenina',
+      author: 'Leo Tolstoy',
+      category: 'Fiction',
+    },
+    {
+      item_id: 'item3',
+      title: 'The Selfish Gene',
+      author: 'Richard Dawkins',
+      category: 'Nonfiction',
+    },
+  ],
   isLoading: false,
   error: null,
 };
@@ -13,7 +32,11 @@ const appId = 's83qpQ58gwNYNK6SH0hz';
 const fetchBooks = createAsyncThunk('books/fetchBooks', async (_, { rejectWithValue }) => {
   try {
     const response = await axios.get(`${baseUrl}/apps/${appId}/books`);
-    return response.data;
+    const transformedData = Object.keys(response.data).map((itemId) => ({
+      ...response.data[itemId][0],
+      item_id: itemId,
+    }));
+    return transformedData;
   } catch (error) {
     return rejectWithValue('Something went wrong with fetching books', error);
   }
@@ -49,7 +72,7 @@ const booksSlice = createSlice({
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.books = action.payload;
+        state.books = [...state.books, ...action.payload];
       })
       .addCase(fetchBooks.rejected, (state, action) => {
         state.isLoading = false;
