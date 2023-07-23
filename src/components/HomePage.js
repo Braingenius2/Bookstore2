@@ -3,8 +3,9 @@ import BookList from './BookList';
 import AddBookForm from './AddBookForm';
 
 const HomePage = () => (
-  <div>
+  <div className="homepage">
     <BookList />
+    <div className="section-hr" />
     <AddBookForm />
   </div>
 );
