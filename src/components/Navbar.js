@@ -1,11 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../css/App.css';
 
 const Navbar = () => (
-  <nav>
+  <nav className="nav">
     <div className="logo">Bookstore CMS</div>
-    <Link to="/">Books</Link>
-    <Link to="/categories">Categories</Link>
+    <ul className="nav-links">
+      <NavLink
+        to="/"
+        exact
+        className="nav-link"
+        activeClassName="active-link"
+        active
+      >
+        Books
+      </NavLink>
+      <NavLink
+        to="/categories"
+        className="nav-link"
+        activeClassName="active-link"
+      >
+        Categories
+      </NavLink>
+    </ul>
+    <button className="icon-button" type="button">
+      <span className="material-icons primary-color">person</span>
+    </button>
+
   </nav>
 );
 

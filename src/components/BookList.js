@@ -15,7 +15,7 @@ const BookList = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className="book-list">
       {books.map((book) => (<Book book={book} key={book.item_id} />))}
     </div>
   );
